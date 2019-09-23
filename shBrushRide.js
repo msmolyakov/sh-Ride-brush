@@ -6,8 +6,8 @@ SyntaxHighlighter.brushes.Custom = function()
                     + ' toBase64String fromBase64String wavesBalance assetBalance indexOf lastIndexOf toBase16String fromBase16String'
                     + ' assetInfo sigVerify checkMerkleProof cons addressFromRecipient transactionHeightById sha256 pow blockInfoByHeight'
                     + ' toInt toBytes split addressFromStringValue toString toUtf8String rsaVerify addressFromString transferTransactionById';
-
-  var keywords    = 'func let if then else match case true false'
+​
+  var keywords    = 'func let if then else match case'
                     + ' CEILING FLOOR DOWN HALFDOWN HALFEVEN HALFUP UP NOALG MD5 SHA1 SHA224 SHA256 SHA384 SHA512 SHA3224 SHA3256 SHA3384 SHA3512'
                     + ' this unit nil height lastBlock Buy Sell';
   var types       = 'Binary Boolean Int String List ScriptResult WriteSet TransferSet DataEntry ScriptTransfer Transfer'
@@ -22,7 +22,7 @@ SyntaxHighlighter.brushes.Custom = function()
   SyntaxHighlighter.regexLib.annotations = /@(Callable|Verifier)/gm
   SyntaxHighlighter.regexLib.byteVectors = /base(16|58|64)'.*'/gm
   SyntaxHighlighter.regexLib.strings = /"[^"]*"/gm
-
+​
   this.regexList = [
       { regex: /#(.*)$/gm,                                   css: 'comments' },
       { regex: SyntaxHighlighter.regexLib.directives,        css: 'keyword' },
@@ -30,7 +30,7 @@ SyntaxHighlighter.brushes.Custom = function()
       { regex: SyntaxHighlighter.regexLib.strings,           css: 'string' },
       { regex: SyntaxHighlighter.regexLib.byteVectors,       css: 'color3' },
       { regex: new RegExp(this.getKeywords(keywords), 'gm'), css: 'keyword' },
-      { regex: new RegExp(this.getKeywords(types), 'gm'),    css: 'color3' },
+      { regex: new RegExp(this.getKeywords(types), 'gm'),    css: 'color1' },
       { regex: new RegExp(this.getKeywords(funcs), 'gm'),    css: 'color2' }
       ];
 };
