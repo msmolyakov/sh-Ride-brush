@@ -16,7 +16,7 @@ SyntaxHighlighter.brushes.Custom = function()
                     + ' Ceiling Down Floor HalfDown HalfEven HalfUp Up'
                     + ' Transaction GenesisTransaction BurnTransaction InvokeScriptTransaction ReissueTransaction SetScriptTransaction'
                     + ' LeaseTransaction LeaseCancelTransaction CreateAliasTransaction ExchangeTransaction MassTransferTransaction'
-                    + ' DataTransaction TransferTransaction IssueTransaction PaymentTransaction SponsorFeeTransaction SetAssetScriptTrans';
+                    + ' DataTransaction TransferTransaction IssueTransaction PaymentTransaction SponsorFeeTransaction SetAssetScriptTransaction';
  
   SyntaxHighlighter.regexLib.directives = /\{-#\s*(STDLIB_VERSION|CONTENT_TYPE|SCRIPT_TYPE)\s+\S+\s*#-\}/gm
   SyntaxHighlighter.regexLib.annotations = /@(Callable|Verifier)/gm
