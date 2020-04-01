@@ -1,6 +1,6 @@
 SyntaxHighlighter.brushes.Custom = function()
 {
-  var keywords    = 'case else func if let match nil then';
+  var keywords    = 'case else func if let match nil then FOLD';
 
   var vars        = 'height lastBlock this tx unit Buy Sell'
                     + 'CEILING FLOOR DOWN HALFDOWN HALFEVEN HALFUP UP NOALG MD5 SHA1 SHA224 SHA256 SHA384 SHA512 SHA3224 SHA3256 SHA3384 SHA3512';
