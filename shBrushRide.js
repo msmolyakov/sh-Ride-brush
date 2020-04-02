@@ -3,7 +3,7 @@ SyntaxHighlighter.brushes.Custom = function()
   var keywords    = 'case else FOLD func if let match nil then';
 
   var vars        = 'height lastBlock this tx unit Buy Sell'
-                    + 'CEILING FLOOR DOWN HALFDOWN HALFEVEN HALFUP UP NOALG MD5 SHA1 SHA224 SHA256 SHA384 SHA512 SHA3224 SHA3256 SHA3384 SHA3512';
+                    + ' CEILING FLOOR DOWN HALFDOWN HALFEVEN HALFUP UP NOALG MD5 SHA1 SHA224 SHA256 SHA384 SHA512 SHA3224 SHA3256 SHA3384 SHA3512';
 
   var typesV2     = 'Address Alias AssetPair Binary Boolean BurnTransaction ByteVector CreateAliasTransaction DataTransaction'
                     + ' ExchangeTransaction GenesisTransaction Int IssueTransaction LeaseCancelTransaction LeaseTransaction'
