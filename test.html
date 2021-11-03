@@ -6,14 +6,19 @@
 </head>
 <body>
 
+<p>
+JS:
 <pre class="brush: js">
 function test() {
     let a = 5;
 }
 </pre>
+</p>
 
+<p>
+Asset V3:
 <pre class="brush: ride">
-{-# STDLIB_VERSION 4 #-}
+{-# STDLIB_VERSION 3 #-}
 {-# CONTENT_TYPE EXPRESSION #-}
 {-# SCRIPT_TYPE ASSET #-}
 
@@ -21,8 +26,69 @@ let a = base58''
 
 func asset() = Issue(...)
 
+sigVerify(a, a, a) && a == (blake2b256(a) + keccak256(a) + sha256(a))
+</pre>
+</p>
+
+<p>
+DApp V3:
+<pre class="brush: ride">
+{-# STDLIB_VERSION 3 #-}
+{-# CONTENT_TYPE DAPP #-}
+{-# SCRIPT_TYPE ACCOUNT #-}
+
+@Callable(inv)
+func foo(arg: Int) = {
+    ScriptResult(
+        TransferSet([
+
+        ]),
+        WriteSet([
+
+        ]),
+    )
+}
+
+@Verifier(txn)
+func verify() = {
+    sigVerify(txn.bodyBytes, txn.proofs[0], txn.senderPublicKey)
+}
+</pre>
+</p>
+
+<p>
+Asset V4:
+<pre class="brush: ride">
+{-# STDLIB_VERSION 4 #-}
+{-# CONTENT_TYPE EXPRESSION #-}
+{-# SCRIPT_TYPE ASSET #-}
+
+let a = base58''
+
+func foldIter(acc: Int, item: Int) = acc + item
+let fold = FOLD<10>([1, 2, 3, 4], 0, foldIter)
+
+func asset() = Issue(...)
+
 sigVerify_16Kb(a, a, a) && rsaVerify_32Kb(SHA3512, a, a, a) && a == (blake2b256_64Kb(a) + keccak256_128Kb(a) + sha256(a))
 </pre>
+</p>
+
+<p>
+DApp V5:
+<pre class="brush: ride">
+{-# STDLIB_VERSION 5 #-}
+{-# CONTENT_TYPE DAPP #-}
+{-# SCRIPT_TYPE ACCOUNT #-}
+
+@Callable(inv)
+func foo() = {
+    let dAppInner = Address(base58'3Pxxxx')
+    strict inner = invoke(dAppInner, "foonc", [], nil)
+    []
+}
+</pre>
+</p>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shAutoloader.min.js"></script>

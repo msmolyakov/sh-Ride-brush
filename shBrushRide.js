@@ -1,7 +1,7 @@
 SyntaxHighlighter.brushes.Ride = function () {
-    var keywords = 'case else FOLD func if let match nil then';
+    var keywords = 'let strict if then else match case func nil FOLD as exactAs';
 
-    var vars = 'height lastBlock this tx unit Buy Sell'
+    var vars = 'height lastBlock this tx unit Buy Sell i'
         + ' CEILING FLOOR DOWN HALFDOWN HALFEVEN HALFUP UP NOALG MD5 SHA1 SHA224 SHA256 SHA384 SHA512 SHA3224 SHA3256 SHA3384 SHA3512';
 
     var typesV2 = 'Address Alias AssetPair Binary Boolean BurnTransaction ByteVector CreateAliasTransaction DataTransaction'
@@ -15,9 +15,13 @@ SyntaxHighlighter.brushes.Ride = function () {
         + ' NoAlg Md5 Sha1 Sha224 Sha256 Sha384 Sha512 Sha3224 Sha3256 Sha3384 Sha3512'
         + ' Ceiling Down Floor HalfDown HalfEven HalfUp Up';
 
-    var typesV4 = 'BinaryEntry BooleanEntry Burn DeleteEntry IntegerEntry Issue Reissue StringEntry UpdateAssetInfoTransaction';
+    var typesV4 = 'BinaryEntry BooleanEntry Burn DeleteEntry IntegerEntry Issue Reissue SponsorFee StringEntry UpdateAssetInfoTransaction BalanceDetails';
 
-    var types = typesV2 + ' ' + typesV3 + ' ' + typesV4;
+    var typesV5 = 'BigInt Lease LeaseCancel Any';
+
+    var typesV6 = 'InvokeExpressionTransaction';
+
+    var types = typesV2 + ' ' + typesV3 + ' ' + typesV4 + ' ' + typesV5 + ' ' + typesV6;
 
     var funcsV2 = 'addressFromPublicKey addressFromRecipient addressFromStringValue assetBalance'
         + ' blake2b256 cons drop dropRight extract fraction fromBase58String fromBase64String'
@@ -34,14 +38,23 @@ SyntaxHighlighter.brushes.Ride = function () {
     var shaL = 'sha256_16Kb sha256_32Kb sha256_64Kb sha256_128Kb';
     var sigVerifyL = 'sigVerify_16Kb sigVerify_32Kb sigVerify_64Kb sigVerify_128Kb';
     var rsaVerifyL = 'rsaVerify_16Kb rsaVerify_32Kb rsaVerify_64Kb rsaVerify_128Kb';
-    var grothL = 'groth16Verify_1inputs groth16Verify_2inputs groth16Verify_3inputs groth16Verify_4inputs groth16Verify_5inputs'
+    var grothL = 'groth16Verify groth16Verify_1inputs groth16Verify_2inputs groth16Verify_3inputs groth16Verify_4inputs groth16Verify_5inputs'
         + ' groth16Verify_6inputs groth16Verify_7inputs groth16Verify_8inputs groth16Verify_9inputs groth16Verify_10inputs'
         + ' groth16Verify_11inputs groth16Verify_12inputs groth16Verify_13inputs groth16Verify_14inputs groth16Verify_15inputs';
+    var bnGrothL = 'bn256Groth16Verify bn256Groth16Verify_1inputs bn256Groth16Verify_2inputs bn256Groth16Verify_3inputs bn256Groth16Verify_4inputs bn256Groth16Verify_5inputs'
+        + ' bn256Groth16Verify_6inputs bn256Groth16Verify_7inputs bn256Groth16Verify_8inputs bn256Groth16Verify_9inputs bn256Groth16Verify_10inputs'
+        + ' bn256Groth16Verify_11inputs bn256Groth16Verify_12inputs bn256Groth16Verify_13inputs bn256Groth16Verify_14inputs bn256Groth16Verify_15inputs';
 
-    var funcsV4 = 'calculateAssetId contains createMerkleRoot groth16Verify median transferTransactionFromProtoBytes valueOrElse'
+    var funcsV4 = 'calculateAssetId contains containsElement createMerkleRoot median transferTransactionFromProto valueOrElse ecrecover makeString min max removeByIndex'
         + ' ' + blakeL + ' ' + keccakL + ' ' + shaL + ' ' + sigVerifyL + ' ' + rsaVerifyL + ' ' + grothL;
 
-    var funcs = funcsV2 + ' ' + funcsV3 + ' ' + funcsV4;
+    var funcsV5 = 'invoke reentrantInvoke calculateLeaseId isDataStorageUntouched scriptHash';
+
+    var foldL = 'fold fold_20 fold_50 fold_100 fold_200 fold_500 fold_1000'
+
+    var funcsV6 = 'sqrt' + ' ' + foldL;
+
+    var funcs = funcsV2 + ' ' + funcsV3 + ' ' + funcsV4 + ' ' + funcsV5 + ' ' + funcsV6;
 
     SyntaxHighlighter.regexLib.directives = /\{-#\s*(STDLIB_VERSION|CONTENT_TYPE|SCRIPT_TYPE)\s+\S+\s*#-}/gm;
     SyntaxHighlighter.regexLib.annotations = /@(Callable|Verifier)/gm;

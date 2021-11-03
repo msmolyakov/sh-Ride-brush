@@ -1,4 +1,4 @@
 # sh-Ride-brush
 SyntaxHighlighter brush for the Ride programming language.
 
-https://wavesplatform.com/technology/ride
+https://docs.waves.tech/en/ride/
