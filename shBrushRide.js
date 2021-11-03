@@ -23,7 +23,7 @@ SyntaxHighlighter.brushes.Ride = function () {
 
     var types = typesV2 + ' ' + typesV3 + ' ' + typesV4 + ' ' + typesV5 + ' ' + typesV6;
 
-    var funcsV2 = 'addressFromPublicKey addressFromRecipient addressFromStringValue assetBalance'
+    var funcsV2 = 'addressFromPublicKey addressFromRecipient addressFromString addressFromStringValue assetBalance'
         + ' blake2b256 cons drop dropRight extract fraction fromBase58String fromBase64String'
         + ' getBinary getBinaryValue getBoolean getBooleanValue getElement getInteger getIntegerValue getString getStringValue'
         + ' isDefined keccak256 sha256 sigVerify size take takeRight throw toBase58String toBase64String toBytes toInt toString'
@@ -48,7 +48,7 @@ SyntaxHighlighter.brushes.Ride = function () {
     var funcsV4 = 'calculateAssetId contains containsElement createMerkleRoot median transferTransactionFromProto valueOrElse ecrecover makeString min max removeByIndex'
         + ' ' + blakeL + ' ' + keccakL + ' ' + shaL + ' ' + sigVerifyL + ' ' + rsaVerifyL + ' ' + grothL;
 
-    var funcsV5 = 'invoke reentrantInvoke calculateLeaseId isDataStorageUntouched scriptHash';
+    var funcsV5 = 'invoke reentrantInvoke calculateLeaseId isDataStorageUntouched scriptHash toBigInt parseBigInt parseBigIntValue';
 
     var foldL = 'fold fold_20 fold_50 fold_100 fold_200 fold_500 fold_1000'
 
